@@ -23,7 +23,7 @@ export class Element {
             })
         })
 
-        // Set reaction for checked property of every children
+        // Set reaction for checked property of every child
         reaction(() => this.children.map(f => f.checked), childrenChecked => {
             if (this.children.length)
                 this.checked = this.isChecked
