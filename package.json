@@ -1,0 +1,23 @@
+{
+  "name": "mobx-checklist",
+  "version": "1.0.0",
+  "description": "Example of mobx+react combination",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mikhail Aksenov (aksenov364@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.14.2",
+    "mobx": "^2.4.2",
+    "mobx-react": "^3.5.4",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "object-assign": "^4.1.0",
+    "path": "^0.12.7",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "webpack": "1.13.1"
+  }
+}

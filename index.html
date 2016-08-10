@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobx + React</title>
+    <style>
+        .checkbox {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: solid;
+            border-width: 1px;
+            margin: 3px;
+            vertical-align: middle;
+        }
+
+        .children {
+            margin-left: 1em;
+        }
+
+        .checkbox.selected {
+            background-color: black;
+        }
+
+        input {
+            border: none;
+            border-bottom: solid;
+            border-width: 1px;
+            margin: 3px;
+        }
+
+        input:focus {
+            outline: none;
+            border-width: 2px;
+        }
+
+        button {
+            border-radius: 3px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app-mount-root"></div>
+
+<script src="vendor.js"></script>
+<script src="bundle.chunk.js"></script>
+</body>
+</html>
