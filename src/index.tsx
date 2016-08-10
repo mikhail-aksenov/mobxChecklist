@@ -5,21 +5,8 @@ import {toJS} from 'mobx'
 import {observer} from 'mobx-react'
 import {Element, elementStore} from './model'
 import _ = require('lodash')
-
-// Ridiculous way to create keys.
-// Thanks to http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript/105078#105078
-function generateGuid() {
-    var result, i, j;
-    result = '';
-    for (j = 0; j < 32; j++) {
-        if(j == 8 || j == 12|| j == 16|| j == 20) 
-            result = result + '-'
-        i = Math.floor(Math.random() * 16).toString(16).toUpperCase()
-        result = result + i
-    }
-    return result
-}
-
+import DevTools from 'mobx-react-devtools'
+import uuid = require('uuid')
 
 const App = observer((props) => {
     const rootElement = elementStore.root
@@ -27,6 +14,7 @@ const App = observer((props) => {
 
     return (
         <div>
+            <DevTools />
             <div>
                 <button onClick={() => rootElement.add(new Element())}>
                     Add children
@@ -44,7 +32,7 @@ const Item = observer((props) => {
         <div className="checklist">
             <div className="header">
                 <input type="checkbox" checked={element.checked} onChange={(v) => { element.checked = v.target.checked}}/>
-                <input type="text" value={element.name} onChange={(v) => { element.name = v }} />
+                <input type="text" value={element.name} onChange={(v) => { element.name = v.target.value }} />
                 <button onClick={ () => element.remove()}>
                     Delete
                 </button>
@@ -62,7 +50,7 @@ const List = (props => {
 
     return (
         <div className='children'>
-            {_.map(props.elements, item => <Item key={generateGuid()} element={item} />)}
+            {_.map(props.elements, item => <Item key={uuid.v4()} element={item} />)}
         </div>
     )
 })

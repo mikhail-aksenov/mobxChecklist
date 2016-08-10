@@ -1,14 +1,16 @@
 ///<reference path="../References.d.ts" />
 import {observable, autorun, transaction, computed, action, reaction} from 'mobx'
 import _ = require('lodash')
+import uuid = require('uuid')
 
 export class ElementStore {
     @observable root: Element = new Element()
 }
 
 export class Element {
+    key: string = uuid.v4()
+    
     name: string
-
     @observable checked: boolean = true
     @observable children: Element[] = []
     @observable parent: Element
